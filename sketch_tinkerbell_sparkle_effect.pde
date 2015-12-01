@@ -38,18 +38,8 @@ class ParticleSystem {
     }
   }
 
-  void activate() {
-    isActivated = true;
-  }
-
-  void deactivate() {
-    isActivated = false;
-  }
-
   void setSourceOfExplosion(int sourceXPosition, int sourceYPosition) {
-    if (isActivated) {
-      return;
-    } else {
+    if (isActivated == false) {
       for (Particle p : particleArray) {
         p.setExplosionPosition(sourceXPosition, sourceYPosition);
       }
@@ -60,7 +50,6 @@ class ParticleSystem {
   void determineDeactivation() {
     for (Particle p : particleArray) {
       if (p.getActivationStatus() == true) {
-        isActivated = true;
         return;
       }
     }
@@ -73,9 +62,15 @@ class ParticleSystem {
         p.run();
       }
       determineDeactivation();
-    } else {
-      return;
     }
+  }
+
+  void activate() {
+    isActivated = true;
+  }
+
+  void deactivate() {
+    isActivated = false;
   }
 
   boolean getSystemActivationStatus() {
@@ -94,9 +89,7 @@ class Particle {
   }
 
   void setExplosionPosition(int initX, int initY) {
-    if (isActivated) {
-      return;
-    } else {
+    if (isActivated == false) {
       this.initX = initX;
       this.initY = initY;
       x = this.initX;
@@ -119,8 +112,6 @@ class Particle {
       display();
       applyGravitationalForce();
       determineReset();
-    } else {
-      return;
     }
   }
 
