@@ -28,7 +28,6 @@ void draw() {
   drawSpectrum();
 }
 
-
 void drawSpectrum() {
   fill(0, 191, 255);
   stroke(0);
