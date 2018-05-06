@@ -8,12 +8,6 @@ Wall.prototype.run = function(){
     this.runElectricityFields();
 }
 
-Wall.prototype.runElectricityFields = function(){
-    this.electricityFields.forEach(function(element){
-        element.run();
-    });
-}
-
 Wall.prototype.display = function(){
     for(i = 0; i < this.elements.length; i++){
         if(i > 0){
@@ -22,13 +16,25 @@ Wall.prototype.display = function(){
     }
 }
 
+Wall.prototype.runElectricityFields = function(){
+    this.electricityFields.forEach(function(element){
+        element.run();
+    });
+}
+
 Wall.prototype.addElement = function(point){
     this.elements.push(point);
 
     if(this.elements.length > 1){
-        electricityField = new ElectricityField(this.elements[this.elements.length-2].x, this.elements[this.elements.length-2].y, this.elements[this.elements.length-1].x, this.elements[this.elements.length-1].x);
-        this.electricityFields.push(electricityField);    
+        firstPoint = new Point(this.elements[this.elements.length-2].x, this.elements[this.elements.length-2].y);
+        secondPoint = new Point(this.elements[this.elements.length-1].x, this.elements[this.elements.length-1].y); 
+        this.addElectricityField(firstPoint, secondPoint);
     }
+}
+
+Wall.prototype.addElectricityField = function(firstPoint, secondPoint){
+    electricityField = new ElectricityField(firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y);
+    this.electricityFields.push(electricityField);
 }
 
 Wall.prototype.removeFirstElement = function(){

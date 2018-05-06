@@ -5,7 +5,7 @@ let wall = new Wall();
 function setup() {
   createCanvas(800,800);
   wall.addElement(new Point(0,0));
-  wall.addElement(new Point(100,100));
+  wall.addElement(new Point(100,150));
 }
 
 function draw() {
