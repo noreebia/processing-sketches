@@ -9,6 +9,7 @@ Wall.prototype.run = function(){
 }
 
 Wall.prototype.display = function(){
+    stroke(223, 22, 142);
     for(i = 0; i < this.elements.length; i++){
         if(i > 0){
             line(this.elements[i-1].x, this.elements[i-1].y, this.elements[i].x, this.elements[i].y);

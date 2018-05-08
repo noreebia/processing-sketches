@@ -1,7 +1,12 @@
 function WallSystem (){
     leftWall = new Wall();
     rightWall = new Wall();
+
+
     shouldMoveRight = true;
+    widthLimit = 200
+
+    lastPoint;
 
     this.run = function(){
 
@@ -25,14 +30,14 @@ function WallSystem (){
         let nextPoint;
         let 
         if(shouldMoveLeft){
-            
+            // newX = 
+            // newY =
+
+            nextPoint = new Point(newX, newY);
         } else{
 
         }
     }
 
-    this.addNextPoint = function(){
-        
-    }
-}
 
+}
