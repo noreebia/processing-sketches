@@ -1,6 +1,3 @@
-function GameInfo(scrollSpeed, scrolledDistance, gameScreenWidth, gameScreenHeight){
+function GameInfo(scrollSpeed){
     this.scrollSpeed = scrollSpeed;
-    this.scrolledDistance = scrolledDistance;
-    this.gameScreenWidth = gameScreenWidth;
-    this.gameScreenHeight = gameScreenHeight;
 }

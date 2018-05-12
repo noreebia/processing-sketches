@@ -13,7 +13,7 @@ function ElectricityField(x1, y1, x2, y2) {
 
 ElectricityField.prototype.run = function(){
     this.countDownFramesLeftUntilChange();
-    console.log(this.shouldElementsChange());
+    //console.log(this.shouldElementsChange());
 
     if(this.shouldElementsChange()){
         this.changeElements();
